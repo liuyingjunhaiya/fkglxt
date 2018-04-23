@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<!-- 
+		targetRuntime：设置自定生成的版本
+				MyBatis3Simple：简单版
+				MyBatis3：豪华版
+	 -->
+	<context id="DB2Tables" targetRuntime="MyBatis3Simple">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql:///kd" userId="root" password="1016">
+		</jdbcConnection>
+
+		<!-- 选配 -->
+<!-- 		<javaTypeResolver> -->
+<!-- 			<property name="forceBigDecimals" value="false" /> -->
+<!-- 		</javaTypeResolver> -->
+
+		<!-- 配置POJO的生成策略 -->
+		<javaModelGenerator targetPackage="com.atguigu.bean"
+			targetProject=".\src">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<!-- 配置Mapper映射文件的生成策略 -->
+		<sqlMapGenerator targetPackage="com.atguigu.mbg.mapper"
+			targetProject=".\src">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- 配置Mapper接口的生成策略 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.atguigu.mbg.mapper" targetProject=".\src">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- 配置根据表名逆向分析生成的对于的类 -->
+		<table tableName="area" domainObjectName="Area"></table>
+		<table tableName="sys_resource" domainObjectName="Sys_resource"></table>
+		<table tableName="sys_organization" domainObjectName="Sys_organization"></table>
+		<table tableName="Sys_dictionary" domainObjectName="Sys_dictionary"></table>
+		<table tableName="sys_position" domainObjectName="Sys_position"></table>
+		<table tableName="entrust" domainObjectName="Entrust"></table>
+		<table tableName="sys_role_resource_relation" domainObjectName="Sys_role_resource_relation"></table>
+		<table tableName="sys_role" domainObjectName="Sys_role"></table>
+		<table tableName="sys_user_role_relation" domainObjectName="Sys_user_role_relation"></table>
+		<table tableName="employee_info" domainObjectName="Employee_info"></table>
+		<table tableName="template" domainObjectName="Template"></table>
+		<table tableName="phone_record" domainObjectName="Phone_record"></table>
+		<table tableName="visit_record" domainObjectName="Visit_record"></table>
+		<table tableName="case_apply" domainObjectName="Case_apply"></table>
+		<table tableName="case_paid" domainObjectName="Case_paid"></table>
+		<table tableName="case_linkman" domainObjectName="Case_linkman"></table>
+		<table tableName="address" domainObjectName="Address"></table>
+		
+
+	</context>
+</generatorConfiguration>
